@@ -1,6 +1,9 @@
 # Use official Ubuntu 20.04 base image
 FROM ubuntu:20.04
 
+# https://askubuntu.com/a/1013396
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install prerequisites
 # curl: download ModusToolbox.tar.gz
 # git: download ModusToolbox project
