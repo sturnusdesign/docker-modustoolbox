@@ -1,5 +1,5 @@
-# Use official Ubuntu 18.04 base image
-FROM ubuntu:18.04
+# Use official Ubuntu 20.04 base image
+FROM ubuntu:20.04
 
 # Install prerequisites
 # curl: download ModusToolbox.tar.gz
