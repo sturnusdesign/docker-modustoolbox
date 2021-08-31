@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY: docker.io
   IMAGE_NAME: vmmedvid/modustoolbox
-  MTB_TAG: mtb23
+  MTB_TAG: mtb231
 
 jobs:
   build-and-push-image:
