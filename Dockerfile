@@ -18,7 +18,7 @@ RUN apt update -y \
 # Download and extract ModusToolbox 2.2
 RUN curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-linux-install.tar.gz -o /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
  && tar -C /opt -zxf /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
- && rm /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz
+ && rm /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
  && curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3.1/ModusToolbox_2.3.1.4663-linux-install.tar.gz -o /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz \
  && tar -C /opt -zxf /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz \
  && rm /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz
