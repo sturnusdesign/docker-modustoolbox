@@ -16,7 +16,7 @@ RUN apt update -y \
  && apt clean
 
 # Download and extract ModusToolbox 2.4
-RUN curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.4/ModusToolbox_2.4.0.5972-linux-install.tar.gz \
+RUN curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.4/ModusToolbox_2.4.0.5972-linux-install.tar.gz -o /tmp/ModusToolbox_2.4.0.5972-linux-install.tar.gz \
  && tar -C /opt -zxf /tmp/ModusToolbox_2.4.0.5972-linux-install.tar.gz \
  && rm /tmp/ModusToolbox_2.4.0.5972-linux-install.tar.gz
 
