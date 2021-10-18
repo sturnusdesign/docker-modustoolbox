@@ -15,24 +15,19 @@ RUN apt update -y \
  && apt install -y curl git make file libglib2.0-0 libusb-1.0-0 libgl1-mesa-glx libfontconfig1 \
  && apt clean
 
-# Download and extract ModusToolbox 2.2
-RUN curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-linux-install.tar.gz -o /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
- && tar -C /opt -zxf /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
- && rm /tmp/ModusToolbox_2.3.0.4276-linux-install.tar.gz \
- && curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3.1/ModusToolbox_2.3.1.4663-linux-install.tar.gz -o /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz \
- && tar -C /opt -zxf /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz \
- && rm /tmp/ModusToolbox_2.3.1.4663-linux-install.tar.gz
+# Download and extract ModusToolbox 2.4
+RUN curl --fail --location --silent --show-error https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.4/ModusToolbox_2.4.0.5972-linux-install.tar.gz \
+ && tar -C /opt -zxf /tmp/ModusToolbox_2.4.0.5972-linux-install.tar.gz \
+ && rm /tmp/ModusToolbox_2.4.0.5972-linux-install.tar.gz
 
 # Execute post-build scripts
 # Note:  udev does not support containers, install_rules.sh not executed
-RUN bash -e /opt/ModusToolbox/tools_2.3/modus-shell/postinstall
-# && sudo bash -e /opt/ModusToolbox/tools_2.3/openocd/udev_rules/install_rules.sh \
-# && sudo bash -e /opt/ModusToolbox/tools_2.3/driver_media/install_rules.sh \
-# && sudo bash -e /opt/ModusToolbox/tools_2.3/fw-loader/udev_rules/install_rules.sh
+RUN bash -e /opt/ModusToolbox/tools_2.4/modus-shell/postinstall
+# && sudo bash -e /opt/ModusToolbox/tools_2.4/openocd/udev_rules/install_rules.sh \
+# && sudo bash -e /opt/ModusToolbox/tools_2.4/driver_media/install_rules.sh \
+# && sudo bash -e /opt/ModusToolbox/tools_2.4/fw-loader/udev_rules/install_rules.sh
 
 # Set environment variable required by ModusToolbox application makefiles
-ENV CY_TOOLS_PATHS="/opt/ModusToolbox/tools_2.3"
-# Set environment variable to enable running Qt-based CLI tools in headless environment
-ENV QT_QPA_PLATFORM="offscreen"
+ENV CY_TOOLS_PATHS="/opt/ModusToolbox/tools_2.4"
 # Set environment variable to avoid Qt warning
 ENV XDG_RUNTIME_DIR="/tmp"
